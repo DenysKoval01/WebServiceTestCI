@@ -27,12 +27,13 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
 - task: VSTest@2
+  displayName: 'VsTest - testAssemblies'
   inputs:
     testAssemblyVer2: |
-      \*WebServiceTestCI.dll
-      !**\*WebServiceTestCI.dll
-      !**\obj\
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+     **\$(BuildConfiguration)\*WebServiceTestCI*.dll
+     !**\obj\**
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+    diagnosticsEnabled: True
+  enabled: true
