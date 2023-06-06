@@ -18,7 +18,6 @@ namespace WebServicesCI
         static ApiTestBase()
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
