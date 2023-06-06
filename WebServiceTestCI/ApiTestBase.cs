@@ -38,7 +38,7 @@ namespace WebServicesCI
 
         public static string GetAuthToken()
         {
-            var client = new RestClient(Configuration["RestfulBokerUrl"]);
+            var client = new RestClient("https://restful-booker.herokuapp.com");
 
             var body = new AuthorizationRequest
             {
