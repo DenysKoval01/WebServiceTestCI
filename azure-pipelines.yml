@@ -31,7 +31,7 @@ steps:
   displayName: 'VsTest - testAssemblies'
   inputs:
     testAssemblyVer2: |
-     **\$(BuildConfiguration)\*WebServiceTestCI*.dll
+     **\$(BuildConfiguration)\*\*WebServiceTestCI*.dll
      !**\obj\**
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
