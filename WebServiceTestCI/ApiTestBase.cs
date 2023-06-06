@@ -11,16 +11,16 @@ namespace WebServicesCI
 {
     public static class ApiTestBase
     {
-        public static string RestfulBokerUrl => Configuration["RestfulBokerUrl"];
+        public static string RestfulBokerUrl => "https://restful-booker.herokuapp.com";
 
         public static IConfiguration Configuration { get; set; }
 
         static ApiTestBase()
         {
-            var builder = new ConfigurationBuilder()
+/*            var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json");
 
-            Configuration = builder.Build();
+            Configuration = builder.Build();*/
         }
 
         public static void AddHeaders(this RestRequest request)
